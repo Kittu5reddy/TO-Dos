@@ -1,0 +1,4 @@
+flask
+tailwind
+Flask-WTF
+bcrypt

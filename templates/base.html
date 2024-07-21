@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"href="{{ url_for('static', filename='/css/output.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <header class="text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <svg 
+  width="64" 
+  height="64" 
+  viewBox="0 0 64 64" 
+  fill="none" 
+  xmlns="http://www.w3.org/2000/svg">
+  <rect 
+    x="8" 
+    y="8" 
+    width="48" 
+    height="48" 
+    rx="4" 
+    ry="4" 
+    stroke="black" 
+    stroke-width="2" 
+    fill="white"/>
+  <path 
+    d="M16 20h32M16 28h32M16 36h32M16 44h32" 
+    stroke="black" 
+    stroke-width="2" 
+    stroke-linecap="round" 
+    stroke-linejoin="round"/>
+  <circle 
+    cx="14" 
+    cy="20" 
+    r="2" 
+    fill="black"/>
+  <circle 
+    cx="14" 
+    cy="28" 
+    r="2" 
+    fill="black"/>
+  <circle 
+    cx="14" 
+    cy="36" 
+    r="2" 
+    fill="black"/>
+  <circle 
+    cx="14" 
+    cy="44" 
+    r="2" 
+    fill="black"/>
+</svg>
+
+            <span class="ml-3 text-2xl">Tailblocks</span>
+          </a>
+          <nav class="  md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 text-2xl  hover:text-gray-900" href="{{ url_for('home') }}" >Home</a>
+            <a class="mr-5 text-2xl  hover:text-gray-900" href="{{ url_for('signupage') }}" >Register</a>
+          </nav>
+          {% if name %}
+          <button class=" inline-flex items-center text-2xl bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">LOGOUT
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </button>
+          {% else %}
+          <button class=" text-2xl inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none  hover:bg-gray-200 rounded text-base mt-4 md:mt-0"><a href="{{ url_for('loginpage') }}">LOGIN</a>
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </button>
+          {% endif %}
+        </div>
+      </header>
+      {% block content %}
+      {% endblock  %}
+      
+      
+
+</body>
+</html>
